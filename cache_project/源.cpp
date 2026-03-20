@@ -5,7 +5,7 @@ using namespace std;
 using namespace std::chrono;
 using namespace my_cache;
 int main() {
-    Cache<int, int> cache(CacheType::LRU, 10);
+    Cache<int, int> cache(CacheType::LRU, 1000);
 
     return 0;
 }

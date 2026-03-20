@@ -16,7 +16,7 @@ namespace my_cache {
 		virtual ~Interface_Cache() = default;
 		Interface_Cache(const Interface_Cache& ic) = delete;
 		Interface_Cache& operator=(const Interface_Cache& ic) = delete;
-
+		
 		virtual bool put(const K& key, V&& value) = 0;
 		virtual V get(const K& key) = 0;
 		virtual bool clear(const K& key) = 0;
