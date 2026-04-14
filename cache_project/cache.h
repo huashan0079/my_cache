@@ -16,7 +16,7 @@ namespace my_cache {
 		virtual ~Interface_Cache() = default;
 		Interface_Cache(const Interface_Cache& ic) = delete;
 		Interface_Cache& operator=(const Interface_Cache& ic) = delete;
-
+		
 		virtual bool put(const K& key, V&& value) = 0;
 		virtual V get(const K& key) = 0;
 		virtual bool clear(const K& key) = 0;
@@ -95,9 +95,6 @@ namespace my_cache {
 		std::unordered_map<K, typename std::list<std::pair<K, V>>::iterator> cache_map;
 	};
 
-
-
-
 	template <typename T, typename = void>
 	struct is_hashable : std::false_type {};
 
@@ -173,7 +170,7 @@ namespace my_cache {
 				version,
 				this
 			);
-			shards[shard_index]->put(key, shell);
+			shards[shard_index]->put(key, std::move(shell));
 		}
 		auto get(const K& key) {
 			size_t shard_index = hasher(key) % shard_count;
