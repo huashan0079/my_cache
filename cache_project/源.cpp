@@ -4,7 +4,6 @@
 #include <atomic>
 #include <thread>
 #include <chrono>
-#include "cache.h"
 #include"map.h"
 #include <iostream>
 #include <vector>
@@ -12,8 +11,8 @@
 #include <chrono>
 #include <algorithm>
 #include <fstream>
-#include"cache.h"
-
+//#include"cache.h"
+#include"cache_branch.h"
 using namespace my_cache;
 using namespace std;
 using namespace std::chrono;
